@@ -4,7 +4,7 @@ export default {
   // ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Nativity — Платформа таргетирванной рекламы',
+    title: 'Nativity — Платформа таргетированной рекламы',
     description: 'Платформа таргетированной рекламы в лучших Telegram-каналах с оплатой за просмоты (CPV)',
     htmlAttrs: {
       lang: 'ru',
