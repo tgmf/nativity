@@ -108,33 +108,35 @@
           <b-col cols="12" md="10" class="p-0 mx-md-auto">
             <h2 class="text-center mb-md-20">Рекламодатели</h2>
             <div v-if="!slidersInit" class="d-flex justify-content-between flex-wrap">
+              <nuxt-img alt="Start.ru" class="h-20" src="/img/partners/start.svg" />
               <nuxt-img alt="Магнит" class="h-20" src="/img/partners/magnit.svg" />
               <nuxt-img alt="Сколково" class="h-30" src="/img/partners/sk.svg" />
               <!-- <nuxt-img alt="Битрикс24" class="h-20" src="/img/partners/bitrix.svg" /> -->
               <!-- <nuxt-img alt="Avon" class="h-20" src="/img/partners/avon.svg" /> -->
-              <nuxt-img alt="Правительство Москвы" class="h-30" src="/img/partners/moscow.svg" />
+              <!-- <nuxt-img alt="Правительство Москвы" class="h-30" src="/img/partners/moscow.svg" /> -->
               <nuxt-img alt="МТС" class="h-20" src="/img/partners/mts.svg" />
               <nuxt-img alt="Xiaomi" class="h-30" src="/img/partners/xiaomi.svg" />
               <nuxt-img alt="IU.ru" class="h-30" src="/img/partners/iu.svg" />
               <nuxt-img alt="Пятерочка" class="h-30" src="/img/partners/pyaterochka.svg" />
               <nuxt-img alt="Вкусвилл" class="h-20" src="/img/partners/vkusville.svg" />
-              <nuxt-img alt="ВЭБ РФ" class="h-30" src="/img/partners/web.svg" />
-              <nuxt-img alt="ВТБ" class="h-30" src="/img/partners/vtb.svg" />
+              <nuxt-img alt="Агентство Инноваций Москвы" class="h-30" src="/img/partners/aim.svg" />
+              <nuxt-img alt="Synergetic" class="h-30" src="/img/partners/synergetic.svg" />
               <nuxt-img alt="Worlds" class="h-20" src="/img/partners/worlds.svg" />
             </div>
             <vue-slick-carousel v-else v-show="slidersReady.partners" v-bind="partnersSliderSettings" ref="partnersSlider" @init="onSliderInit('partners')">
+              <nuxt-img alt="Start.ru" class="h-20" src="/img/partners/start.svg" />
               <nuxt-img alt="Магнит" class="h-20" src="/img/partners/magnit.svg" />
               <nuxt-img alt="Сколково" class="h-30" src="/img/partners/sk.svg" />
               <!-- <nuxt-img alt="Битрикс24" class="h-20" src="/img/partners/bitrix.svg" /> -->
               <!-- <nuxt-img alt="Avon" class="h-20" src="/img/partners/avon.svg" /> -->
-              <nuxt-img alt="Правительство Москвы" class="h-30" src="/img/partners/moscow.svg" />
+              <!-- <nuxt-img alt="Правительство Москвы" class="h-30" src="/img/partners/moscow.svg" /> -->
               <nuxt-img alt="МТС" class="h-20" src="/img/partners/mts.svg" />
               <nuxt-img alt="Xiaomi" class="h-30" src="/img/partners/xiaomi.svg" />
               <nuxt-img alt="IU.ru" class="h-30" src="/img/partners/iu.svg" />
               <nuxt-img alt="Пятерочка" class="h-30" src="/img/partners/pyaterochka.svg" />
               <nuxt-img alt="Вкусвилл" class="h-20" src="/img/partners/vkusville.svg" />
-              <nuxt-img alt="ВЭБ РФ" class="h-30" src="/img/partners/web.svg" />
-              <nuxt-img alt="ВТБ" class="h-30" src="/img/partners/vtb.svg" />
+              <nuxt-img alt="Агентство Инноваций Москвы" class="h-30" src="/img/partners/aim.svg" />
+              <nuxt-img alt="Synergetic" class="h-30" src="/img/partners/synergetic.svg" />
               <nuxt-img alt="Worlds" class="h-20" src="/img/partners/worlds.svg" />
             </vue-slick-carousel>
             <div v-if="slidersInit && !slidersReady.partners" class="m-auto d-flex mb-10 mt-10 justify-content-center"><b-spinner class="text-primary"></b-spinner><span class="sr-only">Загружаем партнеров...</span></div>
@@ -211,9 +213,9 @@
             </div>
             <nuxt-img v-if="window.canUseWebP" format="webp" class="tg_5" src="/img/telegram/tg_5.png"/>
             <img v-else class="tg_5" src="/img/telegram/tg_5.png" />
-            <div class="telegram-card telegram-card-nm">
-              <nuxt-img v-if="window.canUseWebP"  format="webp" alt="канал Мысли-НеМысли" class="w-100 mw-100" src="/img/telegram/nm.png"/>
-              <img v-else  alt="канал Мысли-НеМысли" class="w-100 mw-100" src="/img/telegram/nm.png" />
+            <div class="telegram-card telegram-card-st">
+              <nuxt-img v-if="window.canUseWebP"  format="webp" alt="канал START" class="w-100 mw-100" src="/img/telegram/st.png"/>
+              <img v-else  alt="канал START" class="w-100 mw-100" src="/img/telegram/st.png" />
             </div>
             <div class="telegram-card telegram-card-al">
               <nuxt-img v-if="window.canUseWebP" format="webp" alt="канал Артемия Лебедева" class="w-100 mw-100" src="/img/telegram/al.png"/>
@@ -226,6 +228,10 @@
             <div class="telegram-card telegram-card-xpl">
               <nuxt-img v-if="window.canUseWebP"  format="webp" alt="канал Эксплойт" class="w-100 mw-100" src="/img/telegram/xpl.png"/>
               <img v-else alt="канал Эксплойт" class="w-100 mw-100" src="/img/telegram/xpl.png" />
+            </div>
+            <div class="telegram-card telegram-card-df">
+              <nuxt-img v-if="window.canUseWebP"  format="webp" alt="канал Доктор Фил" class="w-100 mw-100" src="/img/telegram/df.png"/>
+              <img v-else alt="канал Доктор Фил" class="w-100 mw-100" src="/img/telegram/df.png" />
             </div>
           </b-col>
           <b-col cols="12" md="4" order-md="1" class="d-flex flex-column">
@@ -700,6 +706,8 @@
       <div class="plans-bg-3 d-md-none"></div>
     </section> -->
     <section id="analytics" class="analytics">
+      <div class="analytics-bg-1"></div>
+      <div class="analytics-bg-2"></div>
       <b-container fluid>
         <b-row>
           <b-col cols="12" md="10" class="mx-md-auto">
@@ -707,44 +715,90 @@
               Аналитика каналов и&nbsp;размещений
             </h2>
             <p class="text-center section-info mb-20 mb-md-38">
-              Детальная и&nbsp;сквозная аналитика по&nbsp;кросс-пересечениям аудитории
+              Детальная аналитика и&nbsp;сквозная аналитика по&nbsp;кросс-пересечениям аудитории
             </p>
           </b-col>
           <b-col cols="12" md="11" class="mx-md-auto">
             <div class="analytics-grid">
-              <div class="vio bg-white">
-                <h3>Выходы и&nbsp;охваты</h3>
-                  <nuxt-img src="/img/analytics/vio.svg" />
-              </div>
-              <div class="va text-md-left">
-                <b-col cols="12" class="bg-white">
-                  <p class="text-primary va-views fs-md-26 mb-4">1 000 320</p>
-                  <p class="fs-md-16">Просмотры</p>
-                </b-col>
-                <b-col cols="12" class="bg-white">
-                  <p class="text-primary va-posts fs-md-26 mb-4">25</p>
-                  <p class="fs-md-16">Размещения</p>
-                </b-col>
-                <b-col cols="12" class="bg-white">
-                  <p class="text-primary va-er fs-md-26 mb-4">32.8%</p>
-                  <p class="fs-md-16">Вовлеченость, ER</p>
-                </b-col>
-                <b-col cols="12" class="bg-white">
-                  <p class="text-primary va-cost fs-md-26 mb-4">2.0₽</p>
-                  <p class="fs-md-16">Стоимость просмотра</p>
-                </b-col>
-                <b-col cols="12" class="bg-white">
-                  <p class="text-primary fs-md-26 mb-4">2 000 000₽</p>
-                  <p class="fs-md-16">Бюджет кампании</p>
-                </b-col>
-              </div>
-              <div class="audi bg-white">
-                <h3 class="text-center">Аудитория</h3>
-                  <nuxt-img src="/img/analytics/audi.svg" />
-              </div>
-              <div class="chann bg-white">
-                <h3 class="text-center">Интересы / каналы</h3>
-                  <nuxt-img src="/img/analytics/chann.svg" />
+              <div class="bg-white-50 flex p-3 gap-1">
+                <h3 class="mb-8">Заданные показатели</h3>
+                <b-row class="text-center text-md-left mb-8">
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-cost fs-md-16 mb-4">2.0₽</p>
+                      <p class="fs-md-16">Стоимость просмотра</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-none fs-md-16 mb-4">2 000 000₽</p>
+                      <p class="fs-md-16">Бюджет кампании</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-geo fs-md-16 mb-4">Россия</p>
+                      <p class="fs-md-16">Гео</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-none fs-md-16 mb-4">1 000 000</p>
+                      <p class="fs-md-16">Плановый охват</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-crosshair fs-md-16 mb-4">Пользователи банковских услуг</p>
+                      <p class="fs-md-16">Таргетинг</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-eye fs-md-16 mb-4">Медиаохват</p>
+                      <p class="fs-md-16">Цель кампании</p>
+                    </div>
+                  </b-col>
+                </b-row>
+                  <h3 class="mb-8">Рекламные показатели</h3>
+                <b-row class="text-center text-md-left mb-8 mb-md-0">
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-views fs-md-16 mb-4">1 000 320</p>
+                      <p class="fs-md-16">Просмотры</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-pie fs-md-16 mb-4">90%</p>
+                      <p class="fs-md-16">Выполнение плана</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-click fs-md-16 mb-4">32.8%</p>
+                      <p class="fs-md-16">Клики, CTR</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-posts fs-md-16 mb-4">25</p>
+                      <p class="fs-md-16">Размещения</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-er fs-md-16 mb-4">32.8%</p>
+                      <p class="fs-md-16">Вовлеченость, ER</p>
+                    </div>
+                  </b-col>
+                  <b-col cols="6" md="4" class="mb-8">
+                    <div class="bg-white h-100">
+                      <p class="text-primary va-pointer fs-md-16 mb-4">1304</p>
+                      <p class="fs-md-16">Клики</p>
+                    </div>
+                  </b-col>
+                </b-row>
               </div>
               <div class="place bg-white">
                 <h3>Места размещений</h3>
@@ -1320,6 +1374,35 @@
       <div class="other-tg-1"></div>
       <div class="other-tg-2 d-none d-md-block"></div>
     </section> -->
+    <section id="press" class="press">
+      <b-container fluid>
+        <b-row>
+          <b-col cols="12" md="7" class="mx-auto">
+            <h2 class="text-center mb-md-36">
+              О нас пишут
+            </h2>
+            <b-row class="justify-content-around align-items-center">
+              <b-col class="d-flex justify-content-center">
+                <b-link href="https://adindex.ru/news/releases/2023/02/28/310872.phtml?_sp=Nativity" target="_blank">
+                  <nuxt-img src="/img/press/adindex.svg" alt="AdIndex.ru"/>
+                </b-link>
+              </b-col>
+              <b-col class="d-flex justify-content-center">
+                <b-link href="https://www.sostav.ru/publication/platforma-nativity-otkryla-reklamnye-kabinety-dlya-analiza-i-self-service-vedeniya-kampanij-v-telegram-kanalakh-59197.html" target="_blank">
+                  <nuxt-img src="/img/press/sostav.svg" alt="Sostav.ru"/>
+                </b-link>
+              </b-col>
+              <b-col class="d-flex justify-content-center">
+                <b-link href="https://tass.ru/novosti-partnerov/16807157" target="_blank">
+                  <nuxt-img src="/img/press/tass.svg" alt="TASS.ru"/>
+                </b-link>
+              </b-col>
+            </b-row>
+           </b-col>
+        </b-row>
+      </b-container>
+      <div class="press-bg position-absolute"></div>
+    </section>
     <footer>
       <b-container fluid class="">
         <b-row>
@@ -2557,26 +2640,26 @@ export default {
     }
   }
 
-  .telegram-card-nm {
-    width: 13.25em;
-    margin-top: -1.1875em;
-    margin-left: auto;
+  .telegram-card-st {
+    width: 10.25em;
+    margin-top: 1em;
 
     @media screen and (min-width: 768px) {
-      width: 21.5em;
-      margin-top: -5em;
-      margin-left: 7em;
+      width: 12.875em;
+      margin-top: -6em;
+      margin-left: 13em;
     }
   }
 
   .telegram-card-al {
     width: 12.8125em;
-    margin-top: -.5em;
+    margin-top: 1em;
+    margin-left: 2em;
 
     @media screen and (min-width: 768px) {
       width: 20.375em;
-      margin-top: -1em;
-      margin-left: 2em;
+      margin-top: 1em;
+      margin-left: 7em;
     }
   }
 
@@ -2584,26 +2667,44 @@ export default {
     width: 10.1875em;
     height: auto;
     margin-left: auto;
-    margin-top: -3.125em;
+    margin-top: -23.125em;
 
     @media screen and (min-width: 768px) {
       position: absolute;
       width: 16em;
-      margin-top: 0;
+      margin-top: 1em;
       top: 9.25em;
-      right: 4.625em;
+      right: 4em;
     }
   }
 
-  .telegram-card-xpl {
-    width: 10.25em;
-    margin-top: -14.5625em;
+.telegram-card-xpl {
+  width: 10.25em;
+  margin-top: 3.9em;
+  margin-bottom: 1em;
+  margin-left: auto;
+
+  @media screen and (min-width: 768px) {
+    width: 10.75em;
+    margin-top: -25em;
+    margin-left: 1em;
+    z-index: -1;
+    position: relative;
+  }
+}
+
+  .telegram-card-df {
+    margin-top: -23.4625em;
     margin-bottom: 1em;
+    z-index: -1;
+    position: relative;
+    width: 10.25em;
 
     @media screen and (min-width: 768px) {
-      width: 10.75em;
-      margin-top: -12em;
-      margin-left: 20.6em;
+      width: 12.125em;
+      margin-top: -15em;
+      margin-left: 20em;
+      z-index: 0;
     }
   }
 
@@ -3251,15 +3352,66 @@ export default {
 }
 
 #analytics {
+  position: relative;
+  padding-bottom: 3em;  
+  
+  .analytics-bg-1 {
+    position: absolute;
+    width: 20em;
+    height: 11.75em;
+    top: -2.375em;
+    left: calc(50% - 21.4em);
+    background: rgba(27, 129, 249, 0.8);
+    filter: blur(6.5em);
+    -webkit-filter: blur(6.5em);
+    transform: translate3d(0, 0, 0);
+    transform: rotate(-12deg);
+    z-index: -1;
 
-  padding-bottom: 3em;
+    @media screen and (min-width: 768px) {
+      width: 25em;
+      height: 14.25em;
+      top: 9em;
+      left: calc(50% - 24.375em);
+      filter: blur(11.5em);
+      -webkit-filter: blur(11.5em);
+    }
+  }
+
+  .analytics-bg-2 {
+    position: absolute;
+    width: 24.375em;
+    height: 15.875em;
+    top: 3.25em;
+    left: calc(50% - 20em);
+    background: rgba(55, 183, 255, 0.7);
+    filter: blur(6.5em);
+    -webkit-filter: blur(6.5em);
+    transform: translate3d(0, 0, 0);
+    transform: rotate(-3deg);
+    z-index: -1;
+
+    @media screen and (min-width: 768px) {
+      width: 30em;
+      height: 22.25em;
+      top: 14.5em;
+      left: calc(50% - 31.25em);
+      filter: blur(11.5em);
+      -webkit-filter: blur(11.5em);
+    }
+  }
 
   .analytics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-    grid-template-rows: repeat(5, 1fr);
     grid-gap: .5em;
     grid-auto-flow: dense;
+
+    h3 {
+      font-size: 1em;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
 
     .bg-white {
       padding:.5em;
@@ -3268,111 +3420,137 @@ export default {
       flex-direction: column;
       justify-content: space-between;
 
-      h3 {
-        font-size: 1em;
-        font-weight: 500;
-        line-height: 1.5;
-        margin-bottom: 0;
-      }
-
       @media screen and (min-width: 768px) {
-        padding: 1.375em;
+        padding: 1.25em;
       }
     }
 
-    .vio {
-      grid-column: 1 / 3;
+    .bg-white-50 {
 
-      h3 {
-        margin-left: .3125em;
+      .row>div {
+        flex-grow: 1;
+
+        &:nth-child(2n + 1) {
+          padding-left: 0;
+          padding-right: .25em;
+        }
+
+        &:nth-child(2n) {
+          padding-left: .25em;
+          padding-right: 0;
+        }
+
+        @media screen and (min-width: 768px) {
+          &:nth-child(3n + 1) {
+            padding-left: 1em;
+            padding-right: 0;
+          }
+
+          &:nth-child(3n + 2) {
+            padding-left: .5em;
+            padding-right: .5em;
+          }
+
+          &:nth-child(3n) {
+            padding-right: 1em;
+            padding-left: 0;
+          }
+        }
       }
 
       @media screen and (min-width: 768px) {
-        grid-column: 2 / 4;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: .5em 1.25em;
       }
-    }
-
-    .va {
-      grid-row: 2 / 4;
-      text-align: center;
-      display:flex;
-      flex-direction: column;
 
       .bg-white {
-        flex-grow: 1; 
-        flex-basis: 0;
-        padding: .25em .5em;
         justify-content: center;
 
         p {
-          font-size: 0.8125em;
+          font-size: .8125em;
           font-weight: 300;
           margin-bottom: 0;
-        
-          &.text-primary {
-            font-size: 1.25em;
-            font-weight: 400;
-            line-height: 1.3em;
-          }
         }
 
-        &:not(:last-child) {
-          margin-bottom: .5em;
+        p.text-primary {
+          font-size: 1.25em;
+          font-weight: 400;
+          line-height: 1.3em;
 
-          .text-primary::before {
+          &:not(.va-none):before {
             content: "";
             display: inline-block;
             width: 1.3em;
             height: 1.3em;
-            vertical-align: middle;
+            vertical-align: sub;
             margin-right: .5em;
-            background: url(~/static/img/views.svg) center center no-repeat;
+            background: url(~/static/img/cost.svg) 50% no-repeat;
             background-size: contain;
           }
-          
-          .va-posts::before {
+
+          &.va-geo:before {
+            background-image: url(~/static/img/geo.svg);
+          }
+
+          &.va-crosshair {
+            font-size: 1em;
+            &:before {
+              background-image: url(~/static/img/crosshair.svg);
+            }
+
+            @media screen and (min-width:768px) {
+              display: flex;
+              &:before {
+                width: 3.3em;
+                height: 2.3em;
+              }
+            }
+          }
+
+          &.va-eye {
+            font-size: 1em;
+            &:before {
+              background-image: url(~/static/img/eye.svg); 
+            }
+          }
+
+          &.va-views:before {
+            background-image: url(~/static/img/views.svg);
+          }
+
+          &.va-pie:before {
+            background-image: url(~/static/img/pie.svg);
+          }
+
+          &.va-click:before {
+            background-image: url(~/static/img/click.svg);
+          }
+
+          &.va-posts:before {
             background-image: url(~/static/img/posts.svg);
           }
-          
-          .va-er::before {
+
+          &.va-er:before {
             background-image: url(~/static/img/er.svg);
           }
-          
-          .va-cost::before {
-            background-image: url(~/static/img/cost.svg);
+
+          &.va-pointer:before {
+            background-image: url(~/static/img/pointer.svg);
+          }
+
+          @media screen and (min-width:768px) {
+            font-weight: 500;
           }
         }
 
-        @media screen and (min-width: 768px) {
-          padding: 1em 1.5em .875em;
+        @media screen and (min-width:768px) {
+          padding: 1em 1.25em;
         }
-      }
-
-      @media screen and (min-width: 768px) {
-        grid-row: 1 / 3;
-      }
-    }
-
-    .audi {
-      grid-row: 2 ;
-      grid-column: 2;
-
-      @media screen and (min-width: 768px) {
-        grid-column: 3;
-      }
-    }
-    .chann {
-      grid-row: 3 ;
-      grid-column: 2;
-
-      @media screen and (min-width: 768px) {
-        grid-row: 2;
-        padding: 1.375em 1em;
       }
     }
 
     .place {
-      grid-column: 1 / 3;
+      grid-column: 1 / 2;
       grid-row: 4 / 6;
 
       h3 {
@@ -3434,20 +3612,20 @@ export default {
       }
 
       @media screen and (min-width:768px) {
-        grid-column: 4 / 6;
-        grid-row: 1 / 3;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
       }
     }
 
     @media screen and (min-width:768px) {
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: 1fr;
       grid-gap: 1em;
     }
   }
 
   @media screen and (min-width:768px) {
-    padding-top: 7.5em;
+    // padding-top: 7.5em;
     padding-bottom: 7.5em;
   }
 }
@@ -4158,6 +4336,41 @@ export default {
   @media screen and (min-width:768px) {
     padding-top: 7.5em;
     padding-bottom: 7.5em;
+  }
+}
+
+#press {
+  position: relative;
+  padding-top: 1.75em;
+  padding-bottom: 2.75em;
+
+  .row {
+    gap:4em;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 6.75em;
+    padding-bottom: 10.75em;
+  }
+  .press-bg {
+    width: 22em;
+    height: 16em;
+    bottom: -16em;
+    left: calc(50% - 11em);
+    background: rgba(17, 66, 238, 0.8);
+    filter: blur(6.25em);
+    -webkit-filter: blur(6.25em);
+    transform: translate3d(0, 0, 0);
+    z-index: -1;
+
+    @media screen and (min-width: 768px) {
+      width: 52em;
+      height: 32em;
+      bottom: -32em;
+      left: calc(50% - 26em);
+      filter: blur(11.5em);
+      -webkit-filter: blur(11.5em);
+    }
   }
 }
 
