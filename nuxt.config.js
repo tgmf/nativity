@@ -12,7 +12,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Платформа таргетированной рекламы в лучших Telegram-каналах с оплатой за просмоты (CPV)' },
+      { hid: 'description', name: 'description', content: 'платформа programmatic-рекламы в лучших Telegram-каналах с оплатой за просмотр. Платформа внесена в реестр Российского ПО. Nativity представляет возможность продвижения на более чем 2500 верифицированных Telegram-площадок с уникальными узкими таргетингами. Ежемесячная емкость рекламных просмотров платформы превышает показатель в 800 миллионов' },
       { name: 'format-detection', content: 'telephone=no' },
       {
         hid: 'og:image',
