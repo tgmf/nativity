@@ -45,7 +45,7 @@
       </div>
 
       <b-navbar-toggle v-b-toggle.sidebar-nav target="sidebar-nav" class="border-0 text-dark p-0 navbar-navbar-toggler" />
-      
+
     </b-navbar>
     <section id="hero" class="bg-hero">
       <div class="hero-bg-1 position-absolute"></div>
@@ -543,7 +543,7 @@
             <p class="text-center section-info mb-md-48">
               Аудитория <span class="white-pill">2 000 +</span> верифицированных Telegram-каналов
             </p>
-          </b-col>          
+          </b-col>
           <b-col cols="12" md="11" class="p-0 mx-md-auto mb-md-36">
             <div v-if="!slidersInit" class="row channels-plain">
               <b-col v-for="(channel, index) in channels" :key="channel.title" cols="2" class="channels-slide">
@@ -586,7 +586,7 @@
             <h2 class="text-center mb-md-36">
               Ведение кампании в&nbsp;Telegram
             </h2>
-          </b-col>          
+          </b-col>
           <b-col cols="12" md="5" offset-md="1" class="pr-md-42">
             <div class="management-card d-flex flex-column mb-md-0">
               <h3 class="text-center fs-md-32">Без платформы</h3>
@@ -609,7 +609,7 @@
                 Трудоемкий процесс без гарантии получение результата
               </p>
             </div>
-          </b-col>      
+          </b-col>
           <b-col cols="12" md="5" class="pl-md-42">
             <div class="management-card pro d-flex flex-column mb-md-0">
               <h3 class="text-center fs-md-32">Платформа Nativity</h3>
@@ -656,15 +656,15 @@
                 <div :class="['d-flex', 'flex-column', 'bg-white', 'plans-inner', 'inner-' + index, 'plan-' + plan.class]">
                   <div class="plan-title" :style="'background:linear-gradient(260deg, ' + plan.colors[0] + ' 0%, ' + plan.colors[1] + ' 100%);'"><h3 class="text-white text-center">{{plan.title}}</h3></div>
                   <p class="plan-budget text-center">Бюджет от<br/><b>{{new Intl.NumberFormat('ru', { useGrouping: true }).format(plan.budget)}} ₽</b></p>
-                  < !-- eslint-disable vue/no-v-html 
+                  < !-- eslint-disable vue/no-v-html
                   <p class="plan-descr text-center" v-html="plan.descr" />
-                  < !-- eslint-enable 
+                  < !-- eslint-enable
                   <hr>
                   <ul class="plan-points list-unstyled">
                     <template v-for="(point, i) in plan.sp">
-                      < !-- eslint-disable vue/no-v-html 
+                      < !-- eslint-disable vue/no-v-html
                       <li :key="i" :class="'point-' + i" v-html="preparePoint(point, plan.colors[1])" />
-                      < !-- eslint-enable 
+                      < !-- eslint-enable
                     </template>
                   </ul>
                   <b-button class="rounded-pill text-uppercase mx-auto mt-md-auto fs-14" variant="dark" @click="currentForm = forms.planForm; formValues.plan = plan.title; minBudget = plan.budget; formModal = !formModal">
@@ -678,16 +678,16 @@
                 <div :class="['d-flex', 'flex-column', 'bg-white', 'plans-inner', 'inner-' + index, 'plan-' + plan.class]">
                   <div class="plan-title" :style="'background:linear-gradient(260deg, ' + plan.colors[0] + ' 0%, ' + plan.colors[1] + ' 100%);'"><h3 class="text-white text-center">{{plan.title}}</h3></div>
                   <p class="plan-budget text-center">Бюджет от<br/><b>{{new Intl.NumberFormat('ru', { useGrouping: true }).format(plan.budget)}} ₽</b></p>
-                  < !-- eslint-disable vue/no-v-html 
+                  < !-- eslint-disable vue/no-v-html
                   <p class="plan-descr text-center" v-html="plan.descr" />
-                  < !-- eslint-enable 
-                  
+                  < !-- eslint-enable
+
                   <hr>
                   <ul class="plan-points list-unstyled">
                     <template v-for="(point, i) in plan.sp">
-                      < !-- eslint-disable vue/no-v-html 
+                      < !-- eslint-disable vue/no-v-html
                       <li :key="i" :class="'point-' + i" v-html="preparePoint(point, plan.colors[1])" />
-                      < !-- eslint-enable 
+                      < !-- eslint-enable
                     </template>
                   </ul>
                   <b-button class="rounded-pill text-uppercase mx-auto mt-md-auto" variant="dark" @click="currentForm = forms.planForm; formValues.plan = plan.title; minBudget = plan.budget; formModal = !formModal">
@@ -922,7 +922,7 @@
                 <p class="special-views">200 000 +</p>
                 <p class="special-er"><b>ER — 56%</b></p>
               </div>
-              < !-- <p class="fs-12 mt-auto mb-0"><b>260 000 ₽ / за размещение</b></p> 
+              < !-- <p class="fs-12 mt-auto mb-0"><b>260 000 ₽ / за размещение</b></p>
               <p class="special-cpv mt-auto">CPV 1.00 ₽</p>
               <p class="special-guarantee">гарантия оплаты <b>только за&nbsp;просмотры</b></p>
             </div>
@@ -937,7 +937,7 @@
                 <p class="special-views">200 000 +</p>
                 <p class="special-er"><b>ER — 36%</b></p>
               </div>
-              < !-- <p class="fs-12 mt-auto mb-0"><b>120 000 ₽ / за размещение</b></p> 
+              < !-- <p class="fs-12 mt-auto mb-0"><b>120 000 ₽ / за размещение</b></p>
               <p class="special-cpv mt-auto">CPV 0.60 ₽</p>
               <p class="special-guarantee">гарантия оплаты <b>только за&nbsp;просмотры</b></p>
             </div>
@@ -952,7 +952,7 @@
                 <p class="special-views">200 000 +</p>
                 <p class="special-er"><b>ER — 41%</b></p>
               </div>
-              < !-- <p class="fs-12 mt-auto mb-0"><b>290 000 ₽ / за размещение</b></p> 
+              < !-- <p class="fs-12 mt-auto mb-0"><b>290 000 ₽ / за размещение</b></p>
               <p class="special-cpv mt-auto">CPV 1.40 ₽</p>
               <p class="special-guarantee">гарантия оплаты <b>только за&nbsp;просмотры</b></p>
             </div>
@@ -1116,9 +1116,9 @@
                 <div class="bg-g-white radius-12 shadow-bigger worse-registry">
                   <p class="h4 fs-16 text-center mb-8"><b>Единый реестр интернет-рекламы</b></p>
                   <p class="fs-12 text-center mb-24 mb-md-56">Агрегация и&nbsp;хранение данных</p>
-  
+
                   <p class="fs-12 text-center mb-12"><b>Доступ для<br/>контролирующих органов</b></p>
-                  
+
                   <p class="fs-12 text-center mb-8">Федеральная<br/>Налоговая Служба</p>
                   <p class="fs-12 text-center mb-8">Федеральная<br/>Антимонопольная Служба</p>
                   <p class="fs-12 text-center mb-20 mb-md-48">Роскомнадзор</p>
@@ -1142,7 +1142,7 @@
         <b-row>
           <b-col cols="12">
             <h2 class="text-center mb-0 mb-md-16">
-              Другие форматы продвижения&nbsp;в&nbsp;Telegram 
+              Другие форматы продвижения&nbsp;в&nbsp;Telegram
             </h2>
           </b-col>
           <b-col cols="12" class="p-0">
@@ -1157,7 +1157,7 @@
                   <b-row>
                     <b-col cols="12" md="6" class="pr-md-0">
                       <p class="mb-32">Официальная таргетированная реклама в&nbsp;Telegram&nbsp;Ads:</p>
-                      
+
                       <ul class="other-points list-unstyled mb-24 mb-md-32">
                           <li class="other-point-check fs-14">Таргетинг по&nbsp;каналам и&nbsp;аудиториям</li>
                           <li class="other-point-check fs-14">Продвижение канала или&nbsp;бота</li>
@@ -1193,7 +1193,7 @@
                   <b-row>
                     <b-col cols="12" md="6">
                       <p class="mb-32">Проведение скрытых кампаний в&nbsp;Telegram (законно, без&nbsp;пометок):</p>
-                      
+
                       <ul class="other-points list-unstyled mb-24 mb-md-32">
                           <li class="other-point-check fs-14">PR-кампании в&nbsp;TG-СМИ</li>
                           <li class="other-point-check fs-14">Вирусные кампании</li>
@@ -1267,7 +1267,7 @@
                   <b-row>
                     <b-col cols="12" md="6">
                       <p class="mb-32">Официальная таргетированная реклама в&nbsp;Telegram&nbsp;Ads:</p>
-                      
+
                       <ul class="other-points list-unstyled mb-24">
                           <li class="other-point-check fs-14">Таргетинг по&nbsp;каналам и&nbsp;аудиториям</li>
                           <li class="other-point-check fs-14">Продвижение канала или&nbsp;бота</li>
@@ -1302,7 +1302,7 @@
                   <b-row>
                     <b-col cols="12" md="6">
                       <p class="mb-32">Проведение скрытых кампаний в&nbsp;Telegram (законно, без&nbsp;пометок):</p>
-                      
+
                       <ul class="other-points list-unstyled mb-24">
                           <li class="other-point-check fs-14">PR-кампании в&nbsp;TG-СМИ</li>
                           <li class="other-point-check fs-14">Вирусные кампании</li>
@@ -1637,7 +1637,7 @@ export default {
         { cat: 'Авто', minCpv: 2, betterCpv:2, minPosts: 2000, maxPosts: 90000 },
         { cat: 'Промышленность', minCpv: 2, betterCpv:4, minPosts: 2000, maxPosts: 45000 },
       ]
-    const forms = { 
+    const forms = {
       seedForm: {id: 'SeedForm', title: 'Заявка', descr: '', fields: ['name', 'company', 'phone', 'email', 'audience', 'budget', 'subscription'] },
       planForm: {id: 'SeedForm-plan', title: 'Заявка', descr: '', fields: ['name', 'company', 'phone', 'email', 'audience', 'budget', 'plan', 'subscription']},
       specialForm: {id: 'SpecialForm', title: 'Специальные условия', descr: 'Размещение в премиальных каналах на специальных условиях <b>при пакете “Бизнес”</b>', fields: ['name', 'company', 'phone', 'email', 'subscription']},
@@ -1870,7 +1870,7 @@ export default {
       calcOptions,
       calcAu: calcOptions[0].cat,
       calcCpv: calcOptions[0].betterCpv,
-      calcBudget: 7050000,  
+      calcBudget: 7050000,
       otherSliderSettings: {
         infinite: false,
         swipeToSlide: true,
@@ -1913,16 +1913,16 @@ export default {
     // calcPosts() { return { max: Math.ceil(this.calcViews/this.calcChannel.minPosts), min: Math.ceil(this.calcViews/this.calcChannel.maxPosts) }},
     slidersInit() { return this.window.width < 768 },
     minBudgetReady() { return new Intl.NumberFormat('ru', { useGrouping: true }).format(this.minBudget)},
-    calcViewsReady() { 
+    calcViewsReady() {
       return (this.calcCpv < this.calcChannel.minCpv) ? 0 : new Intl.NumberFormat('ru', { useGrouping: true }).format(this.calcViews)
     },
-    calcCpvReady() { 
+    calcCpvReady() {
       return (this.calcCpv < this.calcChannel.minCpv) ? 0 : this.calcCpv
     },
     isValidName() { return !this.formValidating ? null : this.formValues.name.length > 0 },
     isValidCompany() { return !this.formValidating ? null : this.formValues.company.length > 0 },
     isValidPhone() { return !this.formValidating ? null : this.formValues.phone.length >= 18 },
-    isValidEmail() { 
+    isValidEmail() {
       const re = /(.+)@(.+){2,}\.(.+){2,}/
       return !this.formValidating ? null : re.test(this.formValues.email.toLowerCase())
     },
@@ -1966,7 +1966,7 @@ export default {
       const el = href ? document.querySelector(href) : null
       if (el) {
         if (this.faqModal) this.$refs['faq-modal'].toggle(el)
-        this.$router.replace({ name: this.$route.name, hash: href })        
+        this.$router.replace({ name: this.$route.name, hash: href })
       }
     },
     onSliderInit(slider) {
@@ -1996,7 +1996,7 @@ export default {
         else if (!this.isValidBudget) this.formErrors.budget = 'Слишком маленький бюджет кампании!'
       }
       if (this.currentForm.fields.includes('question') && !this.isValidQuestion) this.formErrors.question = 'Задайте вопрос'
-      return (this.formErrors && Object.keys(this.formErrors).length === 0 && Object.getPrototypeOf(this.formErrors) === Object.prototype) 
+      return (this.formErrors && Object.keys(this.formErrors).length === 0 && Object.getPrototypeOf(this.formErrors) === Object.prototype)
     },
     async postFormDataAsJson(formData, formId) {
       const body = new URLSearchParams(formData)
@@ -2010,8 +2010,8 @@ export default {
         },
         body,
       };
-      let url = "https://script.google.com/macros/s/AKfycbxlBOHZhI7jLT-MHKgihYTVjQioiey89IkCEtQAZMmXL0qz_ZVOtPehhHfjeI2Tn1o0/exec";
-      if (formId === 'FAQForm') url = "https://script.google.com/macros/s/AKfycbwDGDGJch0McpuMMotfZpN_gLqTo66etvf2a0TihsPoLJoOUpo87fS6CxqDhwQgis0d2A/exec";
+      let url = "https://script.google.com/macros/s/AKfycbxt8OCv3jUnDV9YaPaxcjF0En-BdG3tgLTaO9jzUwryEhSgmnvKfKxeI0YmvHiAPITofw/exec";
+      if (formId === 'FAQForm') url = "https://script.google.com/macros/s/AKfycbwvktGwmDAM81UsagJNslEQ0HCT6jYOGx7dwDJoyfiGrTHZKHrsmRVj4U51pX2muZBQZQ/exec";
       const response = await fetch(url, fetchOptions);
 
       if (!response.ok) {
@@ -2025,7 +2025,7 @@ export default {
       return response.json();
     },
     async onSubmit(formId) {
-      if (this.formValues.position) return 
+      if (this.formValues.position) return
       const form = document.getElementById(formId)
       this.formValidating = true
       if(this.validateForm()){
@@ -2122,7 +2122,7 @@ export default {
     padding: 0 2.333333em;
     font-size: .6875em;
     line-height: 2.727272;
-    
+
     @media screen and (min-width: 768px) {
       line-height: 2.875;
       padding: 0 1em!important;
@@ -2152,11 +2152,11 @@ export default {
   .b-sidebar {
 
     width: 21em;
-    
+
     header {
       padding: .5em .25em 0;
     }
-    
+
     &.b-sidebar-right > .b-sidebar-header .close {
       margin: 0 0 0 auto;
       font-size: 2em;
@@ -2173,7 +2173,7 @@ export default {
   .navbar-button {
     display: flex;
   }
-  
+
   .main-links {
     height: 1.75em;
     padding: 0 0.5em 0 0;
@@ -2378,7 +2378,7 @@ export default {
       right: 1em;
       height: 1em;
       width: 1em;
-      
+
       svg {
         width: 100%;
         height: 100%;
@@ -2400,7 +2400,7 @@ export default {
       width: 22em;
       height: 8em;
       padding: 2.25em 1em;
-      
+
       p {
         font-size: 1em;
       }
@@ -2456,7 +2456,7 @@ export default {
   .pro {
     margin-bottom: 1.25em;
     min-height: 14.5em;
-  
+
     img {
       width: 2.5em;
       height: 2.5em;
@@ -2475,7 +2475,7 @@ export default {
       color: black;
       font-size: .75em;
       padding-left: .5em;
-      
+
       u {
         padding: .6em;
         line-height: 1;
@@ -2509,7 +2509,7 @@ export default {
     .pro {
       min-height: 16em;
       margin-bottom: 0;
-  
+
       img {
         width: 4.375em;
         height: 4.375em;
@@ -2765,7 +2765,7 @@ export default {
           padding: .5em 1.25em;
           box-shadow: .125em .125em .5em rgba(0, 0, 0, 0.1);
           border-radius: .25em;
-          
+
           span {
             font-size: .5625em;
           }
@@ -2777,7 +2777,7 @@ export default {
         }
 
         &.inner-3 {
-          
+
           img {
             width: 6.25em;
           }
@@ -2930,7 +2930,7 @@ export default {
     @media screen and (min-width:768px) {
       padding:0;
       margin:auto;
-      
+
     }
   }
 
@@ -2940,7 +2940,7 @@ export default {
     text-align: center;
     color: #1B81F9;
     background: white;
-    border-radius: 999px;    
+    border-radius: 999px;
     vertical-align: middle;
     padding: 0.1em 0.5em;
     margin-right: 0.25em;
@@ -2957,7 +2957,7 @@ export default {
     left: 0;
     bottom: -4.375em;
     pointer-events: none;
-  
+
     @media screen and (min-width:768px) {
       width: 11em;
       height: 11em;
@@ -3050,7 +3050,7 @@ export default {
       .channel-subs {
         margin-bottom: 0;
         line-height: 1;
-        
+
         &::before {
           content: "";
           display: inline-block;
@@ -3070,7 +3070,7 @@ export default {
       .channel-views {
         margin-bottom: 0;
         line-height: 1;
-        
+
         &::before {
           content: "";
           display: inline-block;
@@ -3127,7 +3127,7 @@ export default {
       line-height: 1.2;
       margin-bottom: 1em;
     }
-    
+
     .management-card-inner {
       padding: 1em 1em 1em 3em;
       margin-bottom: 0.375em;
@@ -3353,8 +3353,8 @@ export default {
 
 #analytics {
   position: relative;
-  padding-bottom: 3em;  
-  
+  padding-bottom: 3em;
+
   .analytics-bg-1 {
     position: absolute;
     width: 20em;
@@ -3510,7 +3510,7 @@ export default {
           &.va-eye {
             font-size: 1em;
             &:before {
-              background-image: url(~/static/img/eye.svg); 
+              background-image: url(~/static/img/eye.svg);
             }
           }
 
@@ -3580,7 +3580,7 @@ export default {
           flex-basis: 0;
           align-items: center;
         }
-        
+
         img {
           width: 2em;
           max-width: 100%;
@@ -3600,12 +3600,12 @@ export default {
       }
 
       & > div:last-child {
-      
+
         img {
           width: 1.375em;
           margin: 0 .5em 0 1em;
         }
-      
+
         u {
           font-size: .75em;
         }
@@ -3689,15 +3689,15 @@ export default {
     background-color: #1B81F9;
     margin-top: -.6em;
     height: 1.25em;
-    width: 1.25em;    
+    width: 1.25em;
   }
-  
+
   input[type="range"]::-moz-range-thumb {
     border: none; /*Removes extra border that FF applies*/
     background-color: #1B81F9;
     margin-top: -.6em;
     height: 1.25em;
-    width: 1.25em;    
+    width: 1.25em;
   }
 
   .plan-cpv-tooltip:hover {
@@ -3707,7 +3707,7 @@ export default {
 
   .better-cpv:hover {
     text-decoration: underline;
-  } 
+  }
 
   .calc-result {
     font-size: 3.125em;
@@ -3724,7 +3724,7 @@ export default {
     line-height: 1.2;
     margin-right: .25em;
   }
-  
+
   .calculator-bg-1 {
     width: 18.875em;
     height: 11em;
@@ -3850,7 +3850,7 @@ export default {
     .special-subs {
       margin-bottom: 0;
       line-height: 1;
-      
+
       &::before {
         content: "";
         display: inline-block;
@@ -3866,7 +3866,7 @@ export default {
     .special-views {
       margin-bottom: 0;
       line-height: 1;
-      
+
       &::before {
         content: "";
         display: inline-block;
@@ -3930,14 +3930,14 @@ export default {
   .info {
     padding: 1.25em 1em 0;
     margin-bottom: 4.75em;
-  
+
     .info-icon {
       position: absolute;
       top: -.5em;
       right: 1.25em;
       height: 2em;
       width: 2em;
-      
+
       svg {
         width: 100%;
       }
@@ -3963,7 +3963,7 @@ export default {
       padding-bottom: 1.5em;
     }
   }
-      
+
   .legal-title {
     margin: -.6125em auto 0;
 
@@ -4300,7 +4300,7 @@ export default {
     background: url('~/static/img/tg_001.png') center center no-repeat;
     background-size: contain;
     pointer-events: none;
-  
+
     @media screen and (min-width:768px) {
       width: 7.25em;
       height: 7.25em;
@@ -4433,7 +4433,7 @@ footer, .footer {
 
       .modal-body {
         padding: 0;
-        
+
         .form-group {
           margin-bottom: .5em;
 
@@ -4504,7 +4504,7 @@ footer, .footer {
         padding-bottom: 1em;
       }
     }
-    
+
     @media screen and (min-width:768px) {
       width: auto;
       max-width: 28.25em;
@@ -4521,7 +4521,7 @@ footer, .footer {
   z-index: 1020!important;
 
   .modal-dialog {
-  
+
     .modal-header {
       flex-direction: column;
 
