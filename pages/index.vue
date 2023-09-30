@@ -1615,7 +1615,8 @@ export default {
     VueSlickCarousel,
   },
   data() {
-    const calcOptions = [
+    // Initialising some constants before mounting
+    const calcOptions = [ // #calculator settings.  
         { cat: 'Авторские топ-каналы', minCpv: 2, betterCpv:3, minPosts: 50000, maxPosts: 800000 },
         { cat: 'Бизнес и менеджмент', minCpv: 1, betterCpv:2, minPosts: 5000, maxPosts: 90000 },
         { cat: 'Финансы', minCpv: 2, betterCpv:3, minPosts: 5000, maxPosts: 140000 },
@@ -1637,7 +1638,7 @@ export default {
         { cat: 'Авто', minCpv: 2, betterCpv:2, minPosts: 2000, maxPosts: 90000 },
         { cat: 'Промышленность', minCpv: 2, betterCpv:4, minPosts: 2000, maxPosts: 45000 },
       ]
-    const forms = {
+    const forms = { // Main contact forms settings
       seedForm: {id: 'SeedForm', title: 'Заявка', descr: '', fields: ['name', 'company', 'phone', 'email', 'audience', 'budget', 'subscription'] },
       planForm: {id: 'SeedForm-plan', title: 'Заявка', descr: '', fields: ['name', 'company', 'phone', 'email', 'audience', 'budget', 'plan', 'subscription']},
       specialForm: {id: 'SpecialForm', title: 'Специальные условия', descr: 'Размещение в премиальных каналах на специальных условиях <b>при пакете “Бизнес”</b>', fields: ['name', 'company', 'phone', 'email', 'subscription']},
@@ -1647,15 +1648,15 @@ export default {
       faqForm: {id: 'FAQForm', title: 'Вопрос от рекламодателя', fields: ['email', 'question']},
     }
     return {
-      navHeight: 64,
+      navHeight: 64, // Navigation panel height for paddings
       window: {
         width: null,
         height: null,
         canUseWebP: true,
       },
-      showSidebar: false,
-      slidersReady: {},
-      partnersSliderSettings: {
+      showSidebar: false, // Mobile menu closed by default
+      slidersReady: {}, // Sliders initiation register and sliders settings
+      partnersSliderSettings: { 
         centerMode: true,
         slidesToShow: 2,
         swipeToSlide: true,
@@ -1683,7 +1684,17 @@ export default {
         rows: 3,
         slidesPerRow: 1,
       },
-      channels: [
+      plansSliderSettings: {
+        infinite: false,
+        swipeToSlide: true,
+        slidesToShow: 1.25,
+      },
+      otherSliderSettings: {
+        infinite: false,
+        swipeToSlide: true,
+        slidesToShow: 1.1,
+      },
+      channels: [ // #channels content
         {
           class: 'wred',
           title: 'Wylsacom Red',
@@ -1769,12 +1780,7 @@ export default {
           er: 'ER - 23%',
         },
       ],
-      plansSliderSettings: {
-        infinite: false,
-        swipeToSlide: true,
-        slidesToShow: 1.25,
-      },
-      plans: [
+      plans: [ // #plans options (depricated?)
         {
           class: 'start',
           title: 'Старт',
@@ -1808,8 +1814,8 @@ export default {
           colors: ['#9D8DFF', '#7649F9'],
         },
       ],
-      minBudget: 200000,
-      analChannels: [
+      minBudget: 200000, // Universal minimal budget 
+      analChannels: [ // anal = #analytics, not what you might have thought.  
         {
           class: 'tw',
           user: '@TrendWatching24',
@@ -1867,23 +1873,18 @@ export default {
           er: '52%',
         },
       ],
-      calcOptions,
-      calcAu: calcOptions[0].cat,
+      calcOptions, // moving calcOptions in to app scope and setting #calculator defaults
+      calcAu: calcOptions[0].cat, 
       calcCpv: calcOptions[0].betterCpv,
       calcBudget: 7050000,
-      otherSliderSettings: {
-        infinite: false,
-        swipeToSlide: true,
-        slidesToShow: 1.1,
-      },
-      formModal: false,
+      formModal: false, // some UI defaults
       formShow: true,
       formValidating: false,
       formSending: false,
       formSent: false,
       formError: false,
-      forms,
-      currentForm: forms.seedForm,
+      forms, // moving forms in to app scope and setting forms defaults
+      currentForm: forms.seedForm, 
       formValues: {
         name: '',
         company: '',
@@ -1897,7 +1898,7 @@ export default {
         position: '',
       },
       formErrors: {},
-      faqs: [
+      faqs: [ // #faqModal content
         { q: 'Как выглядит реклама и какие форматы возможны? ', a: 'Реклама отображается в Telegram-каналах в виде постов. Допускается развернутый текст, выделение, ссылки на сайт или внешние источники, включение фото- и видеоматериалов.'},
         { q: 'В чем отличие рекламы в Nativity от Telegram Ads? ', a: 'В отличие от Telegram Ads платформа Nativity дает возможность контактировать с аудиторией через полноценные промопосты с включением фото- и видеоконтента. Кроме этого, все аудиторные закупки ведутся только в верифицированных каналах, что повышает эффективность кампании.' },
         { q: 'Почему оплата за просмотры (CPV)?', a: 'Nativity использует прозрачную модель programmatic-закупки, которая позволяет ориентироваться на результат в реальных просмотрах, а не количестве подписчиков в Telegram-каналах. Такая модель исключает неопределенность и дает возможность рекламодателю прогнозировать результаты кампании.' },
@@ -1908,18 +1909,18 @@ export default {
     }
   },
   computed: {
-    calcChannel() { return this.calcOptions.find(c => c.cat === this.calcAu) },
-    calcViews() { return Math.ceil(this.calcBudget/this.calcCpv) },
-    // calcPosts() { return { max: Math.ceil(this.calcViews/this.calcChannel.minPosts), min: Math.ceil(this.calcViews/this.calcChannel.maxPosts) }},
-    slidersInit() { return this.window.width < 768 },
-    minBudgetReady() { return new Intl.NumberFormat('ru', { useGrouping: true }).format(this.minBudget)},
-    calcViewsReady() {
+    calcChannel() { return this.calcOptions.find(c => c.cat === this.calcAu) }, // Switches #calculator channels
+    calcViews() { return Math.ceil(this.calcBudget/this.calcCpv) }, // Calculates "Количество просмотров"
+    // calcPosts() { return { max: Math.ceil(this.calcViews/this.calcChannel.minPosts), min: Math.ceil(this.calcViews/this.calcChannel.maxPosts) }}, //depricated
+    slidersInit() { return this.window.width < 768 }, // Initializes sliders on small screens
+    minBudgetReady() { return new Intl.NumberFormat('ru', { useGrouping: true }).format(this.minBudget)}, // formating "Мини" 
+    calcViewsReady() { // formating calcViews 
       return (this.calcCpv < this.calcChannel.minCpv) ? 0 : new Intl.NumberFormat('ru', { useGrouping: true }).format(this.calcViews)
     },
-    calcCpvReady() {
+    calcCpvReady() { // formating calcCpv
       return (this.calcCpv < this.calcChannel.minCpv) ? 0 : this.calcCpv
     },
-    isValidName() { return !this.formValidating ? null : this.formValues.name.length > 0 },
+    isValidName() { return !this.formValidating ? null : this.formValues.name.length > 0 }, // some form validations
     isValidCompany() { return !this.formValidating ? null : this.formValues.company.length > 0 },
     isValidPhone() { return !this.formValidating ? null : this.formValues.phone.length >= 18 },
     isValidEmail() {
@@ -1930,21 +1931,21 @@ export default {
     isValidQuestion() { return !this.formValidating ? null : this.formValues.question.length > 5 },
   },
   beforeMount() {
-    this.testWebP()
+    this.testWebP() // checking if browser supports webp format before app mount
   },
   mounted() {
-    this.$nextTick(function () {
+    this.$nextTick(function () { // initial resize on app mount
       this.onResize()
     })
-    window.addEventListener('resize', this.onResize)
+    window.addEventListener('resize', this.onResize) // handling resize 
   },
   unmounted() {
-    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('resize', this.onResize); // cleanup between mounts
   },
   created () {
   },
   methods: {
-    testWebP() {
+    testWebP() { // checks if browser supports webp format
       const that = this
       const webP = new Image();
       webP.onload = webP.onerror = function () {
@@ -1952,7 +1953,7 @@ export default {
       };
       webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
     },
-    onResize() {
+    onResize() { // handles resize
       this.$nextTick(() => {
         this.navHeight = this.$refs.navigation? this.$refs.navigation.$el.clientHeight : this.navHeight
         this.showSidebar = false
@@ -1960,7 +1961,7 @@ export default {
         this.window.height = window.innerHeight
       })
     },
-    scrollIntoView(event) {
+    scrollIntoView(event) { // handles anchor links
       event.preventDefault()
       const href = event.target.getAttribute('href')
       const el = href ? document.querySelector(href) : null
@@ -1969,20 +1970,20 @@ export default {
         this.$router.replace({ name: this.$route.name, hash: href })
       }
     },
-    onSliderInit(slider) {
+    onSliderInit(slider) { // registers sliders initialisation
       this.slidersReady[slider] = true
     },
-    nextConvinienceSlide() {
+    nextConvinienceSlide() { // registers next button for #convinience slider
       this.$refs.convinienceSlider.next()
     },
-    preparePoint: (point, color) => '<i><svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.63398 0.499999C6.01888 -0.166667 6.98113 -0.166667 7.36603 0.5L12.1292 8.75C12.5141 9.41667 12.0329 10.25 11.2631 10.25H1.73686C0.967059 10.25 0.485935 9.41667 0.870835 8.75L5.63398 0.499999Z" fill="' + color + '"/></svg></i>' + point,
-    changeAudience(option) {
+    // preparePoint: (point, color) => '<i><svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.63398 0.499999C6.01888 -0.166667 6.98113 -0.166667 7.36603 0.5L12.1292 8.75C12.5141 9.41667 12.0329 10.25 11.2631 10.25H1.73686C0.967059 10.25 0.485935 9.41667 0.870835 8.75L5.63398 0.499999Z" fill="' + color + '"/></svg></i>' + point, // #plans li bullet (depricated)
+    changeAudience(option) { // switches Audience globaly 
       this.formValues.audience = option
       this.calcAu = option
       this.calcCpv = this.calcChannel.betterCpv
     },
-    validateForm () {
-      this.formErrors = {}
+    validateForm () { // validates form before submit
+      this.formErrors = {} // list of actual error messages
       if (this.currentForm.fields.includes('name') && !this.isValidName) this.formErrors.name = 'Введите имя'
       if (this.currentForm.fields.includes('company') && !this.isValidCompany) this.formErrors.company = 'Введите название компании'
       if (this.currentForm.fields.includes('phone')) {
@@ -1996,9 +1997,9 @@ export default {
         else if (!this.isValidBudget) this.formErrors.budget = 'Слишком маленький бюджет кампании!'
       }
       if (this.currentForm.fields.includes('question') && !this.isValidQuestion) this.formErrors.question = 'Задайте вопрос'
-      return (this.formErrors && Object.keys(this.formErrors).length === 0 && Object.getPrototypeOf(this.formErrors) === Object.prototype)
+      return (this.formErrors && Object.keys(this.formErrors).length === 0 && Object.getPrototypeOf(this.formErrors) === Object.prototype) // returns true if there are no errors
     },
-    async postFormDataAsJson(formData, formId) {
+    async postFormDataAsJson(formData, formId) { // posts formated form data to corresponding google script
       const body = new URLSearchParams(formData)
       body.delete('position')
       const fetchOptions = {
@@ -2010,6 +2011,7 @@ export default {
         },
         body,
       };
+      // different scripts for main forms and for FAQ form
       let url = "https://script.google.com/macros/s/AKfycbxt8OCv3jUnDV9YaPaxcjF0En-BdG3tgLTaO9jzUwryEhSgmnvKfKxeI0YmvHiAPITofw/exec";
       if (formId === 'FAQForm') url = "https://script.google.com/macros/s/AKfycbwvktGwmDAM81UsagJNslEQ0HCT6jYOGx7dwDJoyfiGrTHZKHrsmRVj4U51pX2muZBQZQ/exec";
       const response = await fetch(url, fetchOptions);
@@ -2024,23 +2026,23 @@ export default {
 
       return response.json();
     },
-    async onSubmit(formId) {
-      if (this.formValues.position) return
+    async onSubmit(formId) { // handles submits of all forms
+      if (this.formValues.position) return // honeypot for bots
       const form = document.getElementById(formId)
-      this.formValidating = true
+      this.formValidating = true // form is invalid by default
       if(this.validateForm()){
-        this.formValidating = false
-        this.formSending = true;
+        this.formValidating = false // form is valid
+        this.formSending = true; // "Отправляем..." loader is active
         try {
           const formData = new FormData(form);
           const responseData = await this.postFormDataAsJson(formData, formId);
-          if (responseData.result === 'success') {
+          if (responseData.result === 'success') { // reseting UI
             this.formShow = false;
             this.formSent = true;
             this.formSending = false;
             this.formError = false;
           }
-        } catch (error) {
+        } catch (error) { // Error message
           this.formShow = false;
           this.formSent = false;
           this.formSending = false;
@@ -2048,7 +2050,7 @@ export default {
         }
       }
     },
-    formClose() {
+    formClose() { // resets forms an UI
       this.formModal = false
       this.faqModal = false
       this.formError = false
@@ -2071,13 +2073,13 @@ export default {
       }
       this.formErrors = {}
     },
-    focusThis(referral) {
+    focusThis(referral) { // moves focus to an element
       this.$refs[referral].focus()
     },
-    isFieldNeeded(fieldId) {
+    isFieldNeeded(fieldId) { // checks if the field is supposed to be shown in current form
       return this.currentForm.fields.includes(fieldId)
     },
-    canUseWebP() {
+    canUseWebP() { // helps to check if the browser can use webp format by creating an empty webp image 
         if (this.window.canUseWebP) {
           return this.window.canUseWebP
         }
