@@ -1604,7 +1604,6 @@
     </b-modal>
   </div>
 </template>
-
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -1616,7 +1615,7 @@ export default {
   },
   data() {
     // Initialising some constants before mounting
-    const calcOptions = [ // #calculator settings.  
+    const calcOptions = [ // #calculator settings.
         { cat: 'Авторские топ-каналы', minCpv: 2, betterCpv:3, minPosts: 50000, maxPosts: 800000 },
         { cat: 'Бизнес и менеджмент', minCpv: 1, betterCpv:2, minPosts: 5000, maxPosts: 90000 },
         { cat: 'Финансы', minCpv: 2, betterCpv:3, minPosts: 5000, maxPosts: 140000 },
@@ -1656,7 +1655,7 @@ export default {
       },
       showSidebar: false, // Mobile menu closed by default
       slidersReady: {}, // Sliders initiation register and sliders settings
-      partnersSliderSettings: { 
+      partnersSliderSettings: {
         centerMode: true,
         slidesToShow: 2,
         swipeToSlide: true,
@@ -1814,8 +1813,8 @@ export default {
           colors: ['#9D8DFF', '#7649F9'],
         },
       ],
-      minBudget: 200000, // Universal minimal budget 
-      analChannels: [ // anal = #analytics, not what you might have thought.  
+      minBudget: 200000, // Universal minimal budget
+      analChannels: [ // anal = #analytics, not what you might have thought.
         {
           class: 'tw',
           user: '@TrendWatching24',
@@ -1874,7 +1873,7 @@ export default {
         },
       ],
       calcOptions, // moving calcOptions in to app scope and setting #calculator defaults
-      calcAu: calcOptions[0].cat, 
+      calcAu: calcOptions[0].cat,
       calcCpv: calcOptions[0].betterCpv,
       calcBudget: 7050000,
       formModal: false, // some UI defaults
@@ -1884,7 +1883,7 @@ export default {
       formSent: false,
       formError: false,
       forms, // moving forms in to app scope and setting forms defaults
-      currentForm: forms.seedForm, 
+      currentForm: forms.seedForm,
       formValues: {
         name: '',
         company: '',
@@ -1913,8 +1912,8 @@ export default {
     calcViews() { return Math.ceil(this.calcBudget/this.calcCpv) }, // Calculates "Количество просмотров"
     // calcPosts() { return { max: Math.ceil(this.calcViews/this.calcChannel.minPosts), min: Math.ceil(this.calcViews/this.calcChannel.maxPosts) }}, //depricated
     slidersInit() { return this.window.width < 768 }, // Initializes sliders on small screens
-    minBudgetReady() { return new Intl.NumberFormat('ru', { useGrouping: true }).format(this.minBudget)}, // formating "Мини" 
-    calcViewsReady() { // formating calcViews 
+    minBudgetReady() { return new Intl.NumberFormat('ru', { useGrouping: true }).format(this.minBudget)}, // formating "Мини"
+    calcViewsReady() { // formating calcViews
       return (this.calcCpv < this.calcChannel.minCpv) ? 0 : new Intl.NumberFormat('ru', { useGrouping: true }).format(this.calcViews)
     },
     calcCpvReady() { // formating calcCpv
@@ -1937,7 +1936,8 @@ export default {
     this.$nextTick(function () { // initial resize on app mount
       this.onResize()
     })
-    window.addEventListener('resize', this.onResize) // handling resize 
+    this.faqModal = window.location.hash === '#faqModal';
+    window.addEventListener('resize', this.onResize) // handling resize
   },
   unmounted() {
     window.removeEventListener('resize', this.onResize); // cleanup between mounts
@@ -1953,6 +1953,7 @@ export default {
       };
       webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
     },
+
     onResize() { // handles resize
       this.$nextTick(() => {
         this.navHeight = this.$refs.navigation? this.$refs.navigation.$el.clientHeight : this.navHeight
@@ -1977,7 +1978,7 @@ export default {
       this.$refs.convinienceSlider.next()
     },
     // preparePoint: (point, color) => '<i><svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.63398 0.499999C6.01888 -0.166667 6.98113 -0.166667 7.36603 0.5L12.1292 8.75C12.5141 9.41667 12.0329 10.25 11.2631 10.25H1.73686C0.967059 10.25 0.485935 9.41667 0.870835 8.75L5.63398 0.499999Z" fill="' + color + '"/></svg></i>' + point, // #plans li bullet (depricated)
-    changeAudience(option) { // switches Audience globaly 
+    changeAudience(option) { // switches Audience globaly
       this.formValues.audience = option
       this.calcAu = option
       this.calcCpv = this.calcChannel.betterCpv
@@ -2072,6 +2073,7 @@ export default {
         position: '',
       }
       this.formErrors = {}
+      window.history.replaceState(null, null, ' ')
     },
     focusThis(referral) { // moves focus to an element
       this.$refs[referral].focus()
@@ -2079,7 +2081,7 @@ export default {
     isFieldNeeded(fieldId) { // checks if the field is supposed to be shown in current form
       return this.currentForm.fields.includes(fieldId)
     },
-    canUseWebP() { // helps to check if the browser can use webp format by creating an empty webp image 
+    canUseWebP() { // helps to check if the browser can use webp format by creating an empty webp image
         if (this.window.canUseWebP) {
           return this.window.canUseWebP
         }
